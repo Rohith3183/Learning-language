@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SpeakSpark - AI Language Learning</title>
+
+
+<link rel="stylesheet" href="style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+
+</head>
+
+<body>
+
+<!-- ================= LOADER ================= -->
+
+<div id="loader">
+    <div class="loader-content">
+        <h1>SpeakSpark</h1>
+        <div class="spinner"></div>
+    </div>
+</div>
+
+<!-- ================= PARTICLES ================= -->
+
+<div class="particles">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+</div>
+
+<!-- ================= NAVBAR ================= -->
+
+<nav class="navbar">
+
+
+<div class="logo">
+    SpeakSpark
+</div>
+
+<ul class="nav-links">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#languages">Languages</a></li>
+    <li><a href="#translator">AI Translator</a></li>
+    <li><a href="#lessons">Lessons</a></li>
+</ul>
+
+<div class="nav-buttons">
+
+    <button id="theme-toggle">
+        🌙
+    </button>
+
+</div>
+
+</nav>
+
+<!-- ================= HERO ================= -->
+
+<section class="hero" id="home">
+
+<div class="hero-content">
+
+    <h1 id="typing"></h1>
+
+    <p>
+
+        Master English, Spanish, French,
+        German, Japanese, Hindi and Chinese
+        through AI-powered learning,
+        translation, lessons.
+
+    </p>
+
+    <div class="hero-buttons">
+
+        <button class="primary-btn">
+            Start Learning
+        </button>
+
+    </div>
+
+</div>
+
+<div class="hero-image">
+
+    <img
+    src="https://cdn-icons-png.flaticon.com/512/4712/4712027.png"
+    alt="AI Robot">
+
+</div>
+
+</section>
+
+<!-- ================= FLOATING LANGUAGE BUBBLES ================= -->
+
+<div class="bubble-container">
+
+<span class="bubble">Hello</span>
+<span class="bubble">Hola</span>
+<span class="bubble">Bonjour</span>
+<span class="bubble">Hallo</span>
+<span class="bubble">こんにちは</span>
+<span class="bubble">नमस्ते</span>
+<span class="bubble">你好</span>
+
+</div>
+
+<!-- ================= LANGUAGES ================= -->
+
+<section class="languages" id="languages">
+
+<h2>Choose Your Language</h2>
+
+<input
+type="text"
+id="languageSearch"
+placeholder="Search Language...">
+
+<div class="language-grid">
+
+    <div class="language-card">
+        <h3>🇪🇸 Spanish</h3>
+        <button onclick="window.location.href='spanish.html'">
+            Learn
+        </button>
+    </div>
+
+    <div class="language-card">
+        <h3>🇫🇷 French</h3>
+        <button onclick="window.location.href='french.html'">
+            Learn
+        </button>
+    </div>
+
+    <div class="language-card">
+        <h3>🇩🇪 German</h3>
+        <button onclick="window.location.href='german.html'">
+            Learn
+        </button>
+    </div>
+
+    <div class="language-card">
+        <h3>🇯🇵 Japanese</h3>
+        <button onclick="window.location.href='japanese.html'">
+            Learn
+        </button>
+    </div>
+
+    <div class="language-card">
+        <h3>🇮🇳 Hindi</h3>
+        <button onclick="window.location.href='hindi.html'">
+            Learn
+        </button>
+    </div>
+
+    <div class="language-card">
+        <h3>🇨🇳 Chinese</h3>
+        <button onclick="window.location.href='chinese.html'">
+            Learn
+        </button>
+    </div>
+
+</div>
+
+</section>
+
+
+
+<!-- ================= AI TRANSLATOR ================= -->
+
+<section id="translator" class="translator">
+
+<h2>AI Translation Chat</h2>
+
+<div id="chat-box"></div>
+
+<div class="translator-controls">
+
+    <input
+    type="text"
+    id="user-input"
+    placeholder="Type a word...">
+
+    <select id="target-language">
+
+        <option value="spanish">
+            Spanish
+        </option>
+
+        <option value="french">
+            French
+        </option>
+
+        <option value="german">
+            German
+        </option>
+
+        <option value="japanese">
+            Japanese
+        </option>
+
+        <option value="hindi">
+            Hindi
+        </option>
+
+        <option value="chinese">
+            Chinese
+        </option>
+
+    </select>
+
+    <button onclick="sendMessage()">
+        Translate
+    </button>
+
+</div>
+
+</section>
+
+<!-- ================= WORD OF DAY ================= -->
+
+<!-- <section class="word-day">
+    
+<h2>Word Of The Day</h2>
+
+<div class="word-card">
+
+    <h3 id="dailyWord">
+        Hello
+    </h3>
+
+    <p id="dailyMeaning">
+        A greeting used when meeting someone.
+    </p>
+
+    <button onclick="speakWord()">
+        🔊 Pronounce
+    </button>
+
+</div>
+
+</section> -->
+
+
+<!-- ================= MINI LESSONS ================= -->
+
+<section id="lessons" class="lessons">
+
+    <h2>Mini Lessons</h2>
+
+    <div class="lesson-grid">
+
+        <div class="lesson-card"
+        onclick="openLesson('greetings')">
+            Greetings
+        </div>
+
+        <div class="lesson-card"
+        onclick="openLesson('numbers')">
+            Numbers 1-20
+        </div>
+
+        <div class="lesson-card"
+        onclick="openLesson('conversation')">
+            Daily Conversations
+        </div>
+
+        <div class="lesson-card"
+        onclick="openLesson('expressions')">
+            Common Expressions
+        </div>
+
+    </div>
+
+    <div id="lessonContent"></div>
+
+</section>
+
+<!-- Quiz, Dashboard, Statistics, CTA, Footer
+will be added in Part 2 -->
+
+<script src="dictionary.js"></script>
+<script src="lesson.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>

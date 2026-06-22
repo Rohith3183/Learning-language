@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Learn German</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<h1>🇩🇪 Learn German</h1>
+
+<div class="story-container">
+
+    <!-- English Story -->
+
+    <div class="story-box english-box">
+
+        <h2>📖 English Story</h2>
+
+        <div class="story-text">
+            <p id="englishStory"></p>
+        </div>
+
+        <div class="audio-controls">
+
+            <button onclick="playEnglish()">
+                🔊 Listen
+            </button>
+
+            <button onclick="speechSynthesis.pause()">
+                ⏸ Pause
+            </button>
+
+            <button onclick="speechSynthesis.resume()">
+                ▶ Resume
+            </button>
+
+            <button onclick="speechSynthesis.cancel()">
+                ⏹ Stop
+            </button>
+
+        </div>
+
+    </div>
+
+    <!-- German Story -->
+
+    <div class="story-box translated-box">
+
+        <h2>📖 German Translation</h2>
+
+        <div class="story-text">
+            <p id="storyText"></p>
+        </div>
+
+        <div class="audio-controls">
+
+            <button onclick="playGerman()">
+                🔊 Listen
+            </button>
+
+            <button onclick="speechSynthesis.pause()">
+                ⏸ Pause
+            </button>
+
+            <button onclick="speechSynthesis.resume()">
+                ▶ Resume
+            </button>
+
+            <button onclick="speechSynthesis.cancel()">
+                ⏹ Stop
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div class="back-btn">
+    <a href="index.html">⬅ Back</a>
+</div>
+
+<script src="stories.js"></script>
+
+<script>
+
+document.getElementById("englishStory").innerText =
+stories.english.text;
+
+document.getElementById("storyText").innerText =
+stories.german.text;
+
+let speech;
+
+function playEnglish(){
+
+    speechSynthesis.cancel();
+
+    speech =
+    new SpeechSynthesisUtterance(
+        stories.english.text
+    );
+
+    speech.lang = "en-US";
+
+    speechSynthesis.speak(speech);
+}
+
+function playGerman(){
+
+    speechSynthesis.cancel();
+
+    speech =
+    new SpeechSynthesisUtterance(
+        stories.german.text
+    );
+
+    speech.lang = "de-DE";
+
+    speech.rate = 0.9;
+
+    speechSynthesis.speak(speech);
+}
+
+function pauseStory(){
+    speechSynthesis.pause();
+}
+
+function resumeStory(){
+    speechSynthesis.resume();
+}
+
+function stopStory(){
+    speechSynthesis.cancel();
+}
+
+</script>
+
+</body>
+</html>
